@@ -130,22 +130,7 @@ blockquote {
   font-weight: 700;
 }
 
-.proposal-list {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.proposal-list article {
-  padding: 1.25rem 0 0;
-  border-top: 1px solid var(--line);
-}
-
-.proposal-list h3 {
-  font-size: 1.2rem;
-  font-weight: 800;
-}
-
-.proposal-list .result {
+.result {
   margin-bottom: 0;
   color: var(--ink);
   font-weight: 700;
