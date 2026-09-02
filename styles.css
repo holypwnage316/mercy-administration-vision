@@ -289,6 +289,62 @@ blockquote {
   margin-top: 1.5rem;
 }
 
+.overseer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.overseer-card {
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(32, 33, 36, 0.1);
+  border-top: 5px solid var(--accent);
+  border-radius: 8px;
+}
+
+.overseer-card.deacon {
+  border-top-color: var(--gold);
+}
+
+.role-label {
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.overseer-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.committee-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.committee-list div {
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(32, 33, 36, 0.08);
+  border-radius: 8px;
+}
+
+.committee-list strong {
+  display: block;
+}
+
+.committee-list span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted-ink);
+  font-size: 0.95rem;
+}
+
 .flow-steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -411,6 +467,7 @@ footer {
   }
 
   .workflow-grid,
+  .overseer-grid,
   .flow-steps,
   .implementation-list div {
     grid-template-columns: 1fr;
