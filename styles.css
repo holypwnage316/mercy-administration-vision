@@ -340,94 +340,114 @@ blockquote {
   margin-bottom: 0;
 }
 
-.overseer-grid {
+.overseer-flow-list {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
-.overseer-card {
-  position: relative;
-  padding: 1.2rem;
+.overseer-flow {
+  padding: 1.35rem;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(32, 33, 36, 0.1);
-  border-top: 5px solid var(--accent);
   border-radius: 8px;
 }
 
-.overseer-card.deacon {
-  border-top-color: var(--gold);
+.overseer-person {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+  width: min(100%, 360px);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  color: #ffffff;
+  background: var(--accent);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 10px 22px rgba(32, 33, 36, 0.12);
 }
 
-.role-label {
-  margin-bottom: 0.25rem;
-  color: var(--accent);
+.overseer-flow.deacon .overseer-person {
+  background: var(--gold);
+}
+
+.overseer-person span {
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.overseer-card h3 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+.overseer-person strong {
+  font-size: 1.35rem;
+}
+
+.committee-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.6rem;
+}
+
+.committee-row::before {
+  content: "";
+  position: absolute;
+  top: -1.35rem;
+  right: 12%;
+  left: 12%;
+  border-top: 2px solid rgba(32, 33, 36, 0.25);
+}
+
+.committee-row::after {
+  content: "";
+  position: absolute;
+  top: -2.6rem;
+  left: 50%;
+  height: 1.25rem;
+  border-left: 2px solid rgba(32, 33, 36, 0.25);
+}
+
+.committee-node {
+  position: relative;
+  display: grid;
+  align-content: start;
+  min-height: 74px;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(32, 33, 36, 0.1);
+  border-top: 4px solid var(--accent);
+  border-radius: 8px;
   font-weight: 800;
 }
 
-.org-branch {
-  position: relative;
-  height: 28px;
-  margin: 0 0.85rem;
-}
-
-.org-branch::before {
+.committee-node::before {
   content: "";
   position: absolute;
-  inset: 0 50% auto 50%;
-  height: 28px;
-  border-left: 2px solid rgba(32, 33, 36, 0.28);
-}
-
-.org-branch::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-top: 2px solid rgba(32, 33, 36, 0.28);
-}
-
-.committee-list {
-  display: grid;
-  gap: 0.65rem;
-}
-
-.committee-list div {
-  position: relative;
-  padding: 0.85rem;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(32, 33, 36, 0.08);
-  border-radius: 8px;
-}
-
-.committee-list div::before {
-  content: "";
-  position: absolute;
-  top: -0.85rem;
+  top: -1.35rem;
   left: 50%;
-  height: 0.85rem;
-  border-left: 2px solid rgba(32, 33, 36, 0.28);
+  height: 1.35rem;
+  border-left: 2px solid rgba(32, 33, 36, 0.25);
 }
 
-.committee-list strong {
-  display: block;
+.overseer-flow.deacon .committee-node {
+  border-top-color: var(--gold);
 }
 
-.committee-list span {
+.subcommittee-row {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.subcommittee-row span {
   display: block;
-  margin-top: 0.25rem;
+  padding: 0.55rem 0.65rem;
   color: var(--muted-ink);
-  font-size: 0.95rem;
+  background: rgba(49, 95, 115, 0.08);
+  border: 1px solid rgba(49, 95, 115, 0.12);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
 .flow-steps {
@@ -542,19 +562,25 @@ footer {
     gap: 0.25rem;
   }
 
-  .overseer-grid,
+  .overseer-flow-list,
   .flow-steps,
   .pathway-diagram {
     grid-template-columns: 1fr;
   }
 
   .pathway-arrow,
-  .flow-steps article:not(:last-child)::after,
-  .org-branch {
+  .flow-steps article:not(:last-child)::after {
     display: none;
   }
 
-  .committee-list div::before {
+  .committee-row {
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  .committee-row::before,
+  .committee-row::after,
+  .committee-node::before {
     display: none;
   }
 }
