@@ -8,7 +8,7 @@ printButton.addEventListener("click", () => {
 
 copyButton.addEventListener("click", async () => {
   const statement =
-    "The goal is not to buy more tools. The goal is to build clearer ministry pathways, and then use the tools we already have or are considering to support those pathways.";
+    "The goal is not to buy more tools. The goal is to build clearer ministry pathways, and then use Tithely thoughtfully where it can support those pathways.";
 
   try {
     await navigator.clipboard.writeText(statement);
