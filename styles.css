@@ -70,12 +70,6 @@ body {
   --bs-btn-hover-border-color: #244b5d;
 }
 
-.copy-status {
-  align-self: center;
-  color: var(--accent);
-  font-weight: 700;
-}
-
 .main-document {
   max-width: 1040px;
   padding-top: 2.5rem;
@@ -216,8 +210,6 @@ footer {
 
 @media print {
   .navbar,
-  .page-header .btn,
-  .copy-status,
   footer {
     display: none !important;
   }
