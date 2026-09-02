@@ -66,6 +66,12 @@ html {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
 }
 
+.supporting-lead {
+  max-width: 760px;
+  color: var(--muted-ink);
+  font-size: 1.05rem;
+}
+
 .eyebrow,
 .section-kicker {
   color: var(--accent);
