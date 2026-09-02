@@ -4,6 +4,13 @@
   --line: #d9d6cc;
   --paper: #fbfaf6;
   --accent: #315f73;
+  --green: #4f7456;
+  --gold: #a8712a;
+  --clay: #a45542;
+  --blue-soft: #e9f1f4;
+  --green-soft: #edf3eb;
+  --gold-soft: #f7f0e3;
+  --clay-soft: #f5ebe7;
 }
 
 * {
@@ -11,7 +18,9 @@
 }
 
 body {
-  background: var(--paper);
+  background:
+    linear-gradient(180deg, #ffffff 0, var(--paper) 420px),
+    var(--paper);
   color: var(--ink);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -36,7 +45,10 @@ html {
 }
 
 .page-header {
-  padding: 4rem 0 3rem;
+  padding: 5rem 0 4.25rem;
+  background:
+    linear-gradient(135deg, rgba(49, 95, 115, 0.12), rgba(168, 113, 42, 0.1)),
+    #ffffff;
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 82px;
 }
@@ -77,17 +89,62 @@ html {
 
 .main-document {
   max-width: 1040px;
-  padding-top: 2.5rem;
-  padding-bottom: 4rem;
+  padding-top: 3.25rem;
+  padding-bottom: 5rem;
 }
 
 .document-section {
+  position: relative;
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);
-  gap: 1.5rem;
-  padding: 2.25rem 0;
-  border-bottom: 1px solid var(--line);
+  gap: 1.35rem;
+  margin-bottom: 1.5rem;
+  padding: 2.25rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(32, 33, 36, 0.05);
   scroll-margin-top: 82px;
+}
+
+.document-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: var(--accent);
+  border-radius: 8px 0 0 8px;
+}
+
+.document-section:nth-of-type(4n + 1) {
+  background: var(--blue-soft);
+}
+
+.document-section:nth-of-type(4n + 2) {
+  background: var(--green-soft);
+}
+
+.document-section:nth-of-type(4n + 3) {
+  background: #ffffff;
+}
+
+.document-section:nth-of-type(4n) {
+  background: var(--gold-soft);
+}
+
+.document-section:nth-of-type(4n + 2)::before,
+.document-section:nth-of-type(4n + 2) .section-number {
+  background: var(--green);
+}
+
+.document-section:nth-of-type(4n + 3)::before,
+.document-section:nth-of-type(4n + 3) .section-number {
+  background: var(--clay);
+}
+
+.document-section:nth-of-type(4n)::before,
+.document-section:nth-of-type(4n) .section-number {
+  background: var(--gold);
 }
 
 .section-number {
@@ -99,6 +156,7 @@ html {
   background: var(--accent);
   border-radius: 50%;
   font-weight: 800;
+  box-shadow: 0 8px 18px rgba(32, 33, 36, 0.14);
 }
 
 .section-body {
@@ -122,10 +180,11 @@ html {
 
 blockquote {
   margin: 1.5rem 0 0;
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.35rem;
   color: #34383c;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.82);
   border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
   font-size: 1.15rem;
   font-weight: 700;
 }
@@ -137,10 +196,12 @@ blockquote {
 }
 
 .tool-connection {
-  margin-top: 1.25rem;
-  padding: 1rem 1.1rem;
-  background: #ffffff;
+  margin-top: 1.5rem;
+  padding: 1.15rem 1.25rem;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(49, 95, 115, 0.2);
   border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
 }
 
 .tool-connection h3 {
@@ -156,7 +217,7 @@ blockquote {
 .tool-connection a,
 .source-note a {
   display: inline-block;
-  margin-right: 1rem;
+  margin: 0.35rem 1rem 0 0;
   color: var(--accent);
   font-weight: 800;
 }
@@ -164,14 +225,19 @@ blockquote {
 .value-map {
   margin-top: 1.5rem;
   border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .value-row {
   display: grid;
   grid-template-columns: minmax(170px, 0.35fr) 1fr;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem;
   border-bottom: 1px solid var(--line);
+}
+
+.value-row:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .value-row strong {
@@ -198,6 +264,7 @@ footer {
   .document-section {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+    padding: 1.5rem;
   }
 
   .value-row {
