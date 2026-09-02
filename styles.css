@@ -149,6 +149,8 @@ blockquote {
 
 .tool-connection a,
 .source-note a {
+  display: inline-block;
+  margin-right: 1rem;
   color: var(--accent);
   font-weight: 800;
 }
