@@ -210,6 +210,45 @@ blockquote {
   font-weight: 700;
 }
 
+.pathway-diagram {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.pathway-node {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 150px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(32, 33, 36, 0.1);
+  border-radius: 8px;
+}
+
+.pathway-node span {
+  font-size: 1.45rem;
+}
+
+.pathway-node strong {
+  font-size: 1.05rem;
+}
+
+.pathway-node small {
+  color: var(--muted-ink);
+  font-weight: 700;
+}
+
+.pathway-arrow {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
 .result {
   margin-bottom: 0;
   color: var(--ink);
@@ -297,6 +336,7 @@ blockquote {
 }
 
 .overseer-card {
+  position: relative;
   padding: 1.2rem;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(32, 33, 36, 0.1);
@@ -322,16 +362,50 @@ blockquote {
   font-weight: 800;
 }
 
+.org-branch {
+  position: relative;
+  height: 28px;
+  margin: 0 0.85rem;
+}
+
+.org-branch::before {
+  content: "";
+  position: absolute;
+  inset: 0 50% auto 50%;
+  height: 28px;
+  border-left: 2px solid rgba(32, 33, 36, 0.28);
+}
+
+.org-branch::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 2px solid rgba(32, 33, 36, 0.28);
+}
+
 .committee-list {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
 }
 
 .committee-list div {
+  position: relative;
   padding: 0.85rem;
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(32, 33, 36, 0.08);
   border-radius: 8px;
+}
+
+.committee-list div::before {
+  content: "";
+  position: absolute;
+  top: -0.85rem;
+  left: 50%;
+  height: 0.85rem;
+  border-left: 2px solid rgba(32, 33, 36, 0.28);
 }
 
 .committee-list strong {
@@ -348,7 +422,7 @@ blockquote {
 .flow-steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.85rem;
+  gap: 1.35rem;
   margin-top: 1.5rem;
 }
 
@@ -358,6 +432,17 @@ blockquote {
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid rgba(32, 33, 36, 0.1);
   border-radius: 8px;
+}
+
+.flow-steps article:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -1.05rem;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 .flow-steps span {
@@ -469,8 +554,23 @@ footer {
   .workflow-grid,
   .overseer-grid,
   .flow-steps,
+  .pathway-diagram,
   .implementation-list div {
     grid-template-columns: 1fr;
+  }
+
+  .pathway-arrow,
+  .flow-steps article:not(:last-child)::after,
+  .org-branch {
+    display: none;
+  }
+
+  .committee-list {
+    grid-template-columns: 1fr;
+  }
+
+  .committee-list div::before {
+    display: none;
   }
 }
 
