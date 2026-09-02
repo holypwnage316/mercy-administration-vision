@@ -321,13 +321,6 @@ blockquote {
   font-weight: 800;
 }
 
-.workflow-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
 .overseer-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -479,47 +472,27 @@ blockquote {
   font-weight: 800;
 }
 
-.workflow-card {
-  padding: 1.15rem;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(32, 33, 36, 0.1);
-  border-radius: 8px;
-}
-
-.workflow-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.08rem;
-  font-weight: 800;
-}
-
-.workflow-card span {
-  display: block;
-  color: var(--accent);
-  font-size: 0.95rem;
-  font-weight: 800;
-}
-
-.implementation-list {
+.decision-list {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.85rem;
   margin-top: 1.5rem;
 }
 
-.implementation-list div {
-  display: grid;
-  grid-template-columns: minmax(150px, 0.25fr) 1fr;
-  gap: 1rem;
-  padding: 0.9rem 1rem;
+.decision-list div {
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(32, 33, 36, 0.1);
-  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
 }
 
-.implementation-list strong {
-  color: var(--ink);
+.decision-list strong,
+.decision-list span {
+  display: block;
 }
 
-.implementation-list span {
+.decision-list span {
+  margin-top: 0.25rem;
   color: var(--muted-ink);
 }
 
@@ -551,11 +524,9 @@ footer {
     gap: 0.25rem;
   }
 
-  .workflow-grid,
   .overseer-grid,
   .flow-steps,
-  .pathway-diagram,
-  .implementation-list div {
+  .pathway-diagram {
     grid-template-columns: 1fr;
   }
 
