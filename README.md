@@ -7,3 +7,8 @@ messaging, and worship planning improvements as a shared ministry pathway:
 helping people move from visiting, to belonging, to serving, to growing.
 
 Open `index.html` in a browser to view the site locally.
+
+## Netlify
+
+This is a static site with no build step. In Netlify, import the repository and
+use the repository root as the publish directory.
