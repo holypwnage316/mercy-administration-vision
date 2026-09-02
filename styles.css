@@ -399,7 +399,6 @@ blockquote {
 
 .committee-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
 }
 
@@ -553,10 +552,6 @@ footer {
   .flow-steps article:not(:last-child)::after,
   .org-branch {
     display: none;
-  }
-
-  .committee-list {
-    grid-template-columns: 1fr;
   }
 
   .committee-list div::before {
