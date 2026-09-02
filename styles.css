@@ -88,7 +88,7 @@ html {
 }
 
 .main-document {
-  max-width: 1040px;
+  max-width: 1240px;
   padding-top: 3.25rem;
   padding-bottom: 5rem;
 }
@@ -160,7 +160,7 @@ html {
 }
 
 .section-body {
-  max-width: 860px;
+  max-width: 1040px;
 }
 
 .section-body h2 {
